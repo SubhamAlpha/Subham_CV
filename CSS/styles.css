@@ -35,6 +35,19 @@ hr{
 	width:100%;
 	background:#85affc;
 	padding: 0px;
+    vertical-align: middle;
+
+}
+
+.table{
+    
+    padding-bottom: 50px;
+    padding-left: 0px;
+    border-left-width: 30px;
+    width: 655px;
+    border-right-width: 50px;
+    padding-right: 0px;
+
 }
 
 

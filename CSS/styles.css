@@ -1,6 +1,13 @@
 body{
     background-color: aliceblue;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-left-width: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+
 }
+
 hr{
     width: 100%;
     background-color: rgb(242 242 247);
@@ -17,6 +24,10 @@ hr{
 
 .Circular{
     border-radius: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-left-width: 30px;
+
 }
 
 .table-header {

@@ -9,17 +9,22 @@ hr{
 }
 /************************* Class Selector ***********************/
 .header1{   /* This is know as class selector in CSS */ 
-    color: brown;
+    color: rgb(7, 152, 248);
 }
 .header2{
     color: rgb(4, 173, 240);
 }
+
 .Circular{
     border-radius: 100%;
 }
 
 /******************* ID Selector (ID can be use only once for a page/each Instance *******************/
 #Skill{
-    color: rgb(4, 173, 240);
-    
+    color: rgb(4, 173, 240); 
+
+}
+
+#hr{
+    border-width: 2px;
 }

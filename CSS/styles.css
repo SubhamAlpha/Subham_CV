@@ -4,7 +4,7 @@ body{
 hr{
     width: 100%;
     background-color: rgb(242 242 247);
-    border-width: 2px;
+    border-width: 1px;
     border-top-style: double;
 }
 /************************* Class Selector ***********************/
@@ -18,6 +18,14 @@ hr{
 .Circular{
     border-radius: 100%;
 }
+
+.table-header {
+	
+	width:100%;
+	background:#85affc;
+	padding: 0px;
+}
+
 
 /******************* ID Selector (ID can be use only once for a page/each Instance *******************/
 #Skill{

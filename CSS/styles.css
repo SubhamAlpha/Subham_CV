@@ -80,7 +80,23 @@ hr{
   }
 
 
+  .square{
+    
+    border-left-width: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgb(41, 89, 248);
+    height: 400px;
+    width: 500px;
+  }
 /******************* ID Selector (ID can be use only once for a page/each Instance *******************/
+#pic{
+    height: 350px;
+    margin-top: 25px;
+    
+}
 #Skill{
     color: rgb(4, 173, 240); 
 

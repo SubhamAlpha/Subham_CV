@@ -88,13 +88,15 @@ hr{
     padding-left: 20px;
     padding-right: 20px;
     background-color: rgb(41, 89, 248);
-    height: 400px;
-    width: 500px;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: inline-block;
   }
 /******************* ID Selector (ID can be use only once for a page/each Instance *******************/
 #pic{
-    height: 350px;
-    margin-top: 25px;
+    max-width: 100%;
+    height: auto;
     
 }
 #Skill{

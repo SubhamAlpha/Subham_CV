@@ -80,19 +80,19 @@ hr{
   }
 
 
-  .square{
-    
-    border-left-width: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: rgb(41, 89, 248);
+  .square {
     width: 50%;
     padding: 10px;
     box-sizing: border-box;
     display: inline-block;
-  }
+}
+
+@media (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    .square {
+        width: 100%;
+    }
+}
 /******************* ID Selector (ID can be use only once for a page/each Instance *******************/
 #pic{
     max-width: 100%;

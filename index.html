@@ -34,10 +34,10 @@
         <h3 id="Skill">Technical Skills:</h3>
         <ol>
             <li>Programming Languages: SQL,Pyspark,Java, Python </li>
-            <li>Data Processing: Pyspark, Databricks,Flink</li>
+            <li>Data Processing: Pyspark, Databricks,Flink,Azure Data Factory</li>
             <li>Cloud Platforms: Microsoft Azure(ADF,Databricks),GCP(BigQuery,Dataflow)</li>
             <li>Data Architecture: Medallion(DeltaLake,Iceberg), Data Mesh(dbt),Lambda(Spark+Kafka) </li>
-            <li>Version Control: Git</li>
+            <li>Version Control/Orchestration: Git,Azure DevOps(CI/CD),dbt</li>
             <li>Agile Methodologies: Scrum, Kanban, Waterfall,V-model</li>
             <li>Problem Solving and Algorithms</li>
         </ol>
@@ -84,14 +84,28 @@
               </tr>
         </table>
 
-        <a href="experience.html"><h3 id="Skill">Work Experience: </h3></a>
-        <ul>
-            <li>Collaborated with cross-functional teams to design, develop, and deploy customer-centric web applications using React.js and Node.js</li>
-            <li>Utilized AWS services to build and maintain scalable and resilient cloud-native applications, resulting in reduced downtime and enhanced user experience.</li>
-            <li>Contributed to the entire software development lifecycle, from requirements gathering and design to testing and deployment.</li>
-            <li>Actively participated in code reviews, optimizing codebase for performance, security, and maintainability.</li>
-            <li>Implemented DevOps practices, integrating CI/CD pipelines to automate the deployment process and improve development efficiency.</li>
-        </ul>
+        <a href="experience.html" style="text-decoration: none;"><h3 id="WorkExp">Work Experience</h3></a>
+
+<div class="experience-entry">
+    <h4 style="margin-bottom: 5px;">Senior Data Engineer | HCL Tech (Client: Henkel)</h4>
+    <p style="margin-top: 0; color: #666;"><i>Jan 2020 – Present</i></p>
+    <ul class="ul">
+        <li><strong>Accomplished</strong> a 40% reduction in data processing latency <strong>as measured by</strong> Azure Monitor, by <strong>architecting</strong> a real-time ingestion pipeline using Azure Event Hubs and Spark Structured Streaming.</li>
+        <li><strong>Optimized</strong> annual cloud compute spend by $120k <strong>by implementing</strong> custom Databricks autoscaling clusters and refactoring shuffle-heavy PySpark jobs to eliminate data skew.</li>
+        <li><strong>Led</strong> the migration of 500+ legacy ETL jobs to a <strong>Medallion Architecture</strong> (Delta Lake), improving data availability for downstream Data Science teams by 65%.</li>
+        <li><strong>Engineered</strong> an automated Data Quality framework using <strong>Great Expectations</strong>, reducing production schema-drift incidents by 90% across Azure and GCP environments.</li>
+    </ul>
+</div>
+
+<div class="experience-entry" style="margin-top: 20px;">
+    <h4 style="margin-bottom: 5px;">Data Engineer | Capgemini (Client: Meijer)</h4>
+    <p style="margin-top: 0; color: #666;"><i>June 2018 – Dec 2019</i></p>
+    <ul class="ul">
+        <li><strong>Scaled</strong> data ingestion throughput to 2TB/day <strong>as measured by</strong> throughput metrics, by <strong>transitioning</strong> batch-based workloads to a Kappa architecture on GCP Dataflow.</li>
+        <li><strong>Automated</strong> CI/CD workflows for data pipelines <strong>by developing</strong> reusable Terraform modules and Azure DevOps YAML pipelines, reducing deployment time by 80%.</li>
+        <li><strong>Designed</strong> complex Star Schema models in BigQuery that reduced dashboard load times by 30% for 200+ global business users.</li>
+    </ul>
+</div>
 
     </body>
 </html>

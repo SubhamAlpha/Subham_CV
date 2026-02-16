@@ -1,111 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Subham Nanda - Senior Data Engineer specializing in Azure, GCP, and Databricks. Expert in ETL/ELT, Medallion Architecture, and PySpark optimization.">
+    <meta name="keywords" content="Data Engineer, Subham Nanda, Databricks, Azure, GCP, PySpark, Delta Lake, Medallion Architecture">
+    <title>Subham Nanda | Senior Data Engineer Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0f172a; /* Navy/Slate for Authority */
+            --accent-color: #2563eb;  /* Professional Blue */
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-color: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
 
-        <title>Subham's CV</title>
-        <link rel="stylesheet" href="CSS/styles.css">
-    </head>
-    <body>
-        <img class="Circular" src="Images\temp_dp.jpg" width="180" height="160" alt="Photo">
-        <h1 class="header2">Subham Nanda</h1>
-        <p><i><b>Data Engineer</b></i></p>
-        <p>Data Engineer with 5+ years of experience specializing in architecting high-throughput ETL/ELT 
-          pipelines and robust Data frameworks within Azure and GCP ecosystems. Expert in optimizing 
-          Databricks and PySpark environments to reduce processing latency and cloud spend. Proven track record 
-          of leading multi-vendor migrations and mentoring engineering teams to deliver 99.9% data reliability 
-          for production-grade analytics.
-        </p>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-            <p>
-                <ul class="ul">
-                    <li class="li"><a class="li_a" href="#">Projects</a></li>
-                    <li class="li"><a class="li_a" href="https://leetcode.com/Subham555/">Leet Code</a></li>
-                    <li class="li"><a class="li_a" href="https://github.com/SubhamAlpha">GitHub</a></li>
-                    <li class="li"><a class="li_a" href="https://www.codechef.com/">CodeChef</a></li>
-                    <li class="li"><a class="li_a" href="https://www.linkedin.com/in/digitalsubham/">LinkedIn</a></li>
-                    <li class="li"><a class="li_a" href="Certificates.html">Certificates</a></li>
-                </ul> 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .cv-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--border);
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .header-text .title {
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ATS-Friendly Links */
+        .links-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+            list-style: none;
+        }
+
+        .links-bar li a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .links-bar li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Summary Section */
+        .summary {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 20px;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .skill-item {
+            font-size: 0.95rem;
+        }
+
+        .skill-item strong {
+            color: var(--primary-color);
+        }
+
+        /* Experience Items */
+        .experience-entry {
+            margin-bottom: 25px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .exp-header h3 {
+            font-size: 1.15rem;
+            color: var(--primary-color);
+        }
+
+        .exp-header .date {
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .experience-entry ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+
+        .experience-entry li {
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        /* Table Styling */
+        .edu-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .edu-table th {
+            background-color: #f1f5f9;
+            text-align: left;
+            padding: 12px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .edu-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; }
+            .cv-container { padding: 25px; }
+            .exp-header { flex-direction: column; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .links-bar { justify-content: center; }
+        }
+
+        /* Action Button */
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        @media print {
+            .print-btn { display: none; }
+            body { padding: 0; background-color: white; }
+            .cv-container { box-shadow: none; max-width: 100%; padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <header>
+            <img src="Images/temp_dp.jpg" alt="Subham Nanda Profile Photo" class="profile-img">
+            <div class="header-text">
+                <h1>Subham Nanda</h1>
+                <div class="title">Senior Data Engineer</div>
+                <ul class="links-bar">
+                    <li><a href="https://www.linkedin.com/in/digitalsubham/">LinkedIn</a></li>
+                    <li><a href="https://github.com/SubhamAlpha">GitHub</a></li>
+                    <li><a href="https://leetcode.com/Subham555/">LeetCode</a></li>
+                    <li><a href="Certificates.html">Certificates</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <section>
+            <p class="summary">
+                Data Engineer with 5+ years of experience specializing in architecting high-throughput ETL/ELT pipelines and robust Data frameworks within **Azure and GCP ecosystems**. Expert in optimizing **Databricks and PySpark** environments to reduce processing latency and cloud spend. Proven track record of leading multi-vendor migrations and mentoring engineering teams to deliver **99.9% data reliability** for production-grade analytics.
             </p>
+        </section>
+
+        <section id="Skill">
+            <h2>Technical Proficiency</h2>
+            <div class="skills-grid">
+                <div class="skill-item"><strong>Languages:</strong> SQL, PySpark, Java, Python</div>
+                <div class="skill-item"><strong>Processing:</strong> Spark, Databricks, Flink, Azure Data Factory</div>
+                <div class="skill-item"><strong>Cloud:</strong> Azure (ADF, Databricks), GCP (BigQuery, Dataflow)</div>
+                <div class="skill-item"><strong>Architecture:</strong> Medallion (Delta Lake, Iceberg), Data Mesh (dbt), Lambda</div>
+                <div class="skill-item"><strong>DevOps:</strong> Git, Azure DevOps (CI/CD), dbt, Terraform</div>
+                <div class="skill-item"><strong>Methodologies:</strong> Agile (Scrum, Kanban), V-Model</div>
+            </div>
+        </section>
+
+        <section id="WorkExp">
+            <h2>Professional Experience</h2>
+
+            <div class="experience-entry">
+                <div class="exp-header">
+                    <h3>Senior Data Engineer | HCL Tech (Client: Henkel)</h3>
+                    <span class="date">Jan 2020 – Present</span>
+                </div>
+                <ul>
+                    <li><strong>Reduced data processing latency by 40%</strong> by architecting a real-time ingestion pipeline using Azure Event Hubs and Spark Structured Streaming.</li>
+                    <li><strong>Optimized annual cloud compute spend by $120k</strong> through implementing custom Databricks autoscaling and refactoring PySpark jobs to eliminate data skew.</li>
+                    <li><strong>Led migration of 500+ legacy ETL jobs</strong> to a Medallion Architecture (Delta Lake), increasing data availability for Science teams by 65%.</li>
+                    <li><strong>Engineered an automated Data Quality framework</strong> using Great Expectations, reducing production schema-drift incidents by 90%.</li>
+                </ul>
+            </div>
+
+            <div class="experience-entry">
+                <div class="exp-header">
+                    <h3>Data Engineer | Capgemini (Client: Meijer)</h3>
+                    <span class="date">June 2018 – Dec 2019</span>
+                </div>
+                <ul>
+                    <li><strong>Scaled data ingestion to 2TB/day</strong> by transitioning batch workloads to a Kappa architecture on GCP Dataflow.</li>
+                    <li><strong>Automated CI/CD workflows</strong> using Terraform and Azure DevOps YAML pipelines, reducing deployment time by 80%.</li>
+                    <li><strong>Designed complex Star Schema models</strong> in BigQuery, reducing dashboard load times by 30% for 200+ global users.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Educational Profile</h2>
+            <div class="table-container">
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>University / Board</th>
+                            <th>Institution</th>
+                            <th>Year</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>B.Tech</strong></td>
+                            <td>WBUT University</td>
+                            <td>Om Dayal Group of Institutions</td>
+                            <td>2020</td>
+                            <td>7.8 CGPA</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Class XII</strong></td>
+                            <td>WBBHSE</td>
+                            <td>Jhargram Kumud Kumari Institution</td>
+                            <td>2016</td>
+                            <td>82%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Class X</strong></td>
+                            <td>Intermediate Board</td>
+                            <td>Jhargram Kumud Kumari Institution</td>
+                            <td>2014</td>
+                            <td>82%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">Download PDF</button>
+
+    <script>
+        // Simple Interaction: Log visit for analytics (SEO/Tracking simulation)
+        console.log("Subham Nanda's Portfolio Loaded successfully.");
         
-            <hr size="3">
-
-
-        <h3 id="Skill">Technical Skills:</h3>
-        <ol>
-            <li>Programming Languages: SQL,Pyspark,Java, Python </li>
-            <li>Data Processing: Pyspark, Databricks,Flink,Azure Data Factory</li>
-            <li>Cloud Platforms: Microsoft Azure(ADF,Databricks),GCP(BigQuery,Dataflow)</li>
-            <li>Data Architecture: Medallion(DeltaLake,Iceberg), Data Mesh(dbt),Lambda(Spark+Kafka) </li>
-            <li>Version Control/Orchestration: Git,Azure DevOps(CI/CD),dbt</li>
-            <li>Agile Methodologies: Scrum, Kanban, Waterfall,V-model</li>
-            <li>Problem Solving and Algorithms</li>
-        </ol>
-
-        <hr size="3">
-
-        <table>
-            <tr>
-                <td colspan="2" bgcolor="#85affc"><strong>EDUCATIONAL PROFILE</strong></td>
-              </tr>
-              <tr>
-                <td colspan="2"><table width="850" border="1" bordercolor="#000000">
-                  <tr>
-                    <td><div align="center"><strong>Course</strong></div></td>
-                    <td><div align="center"><strong>Board/University</strong></div></td>
-                    <td><div align="center"><strong>Educational Institutation</strong></div></td>
-                    <td><div align="center"><strong>Year of pass</strong></div></td>
-                    <td><p align="center"><strong>% of Marks</strong></p></td>
-                  </tr>
-                  <tr>
-                    <td>B.Tech</td>
-                    <td>WBUT University</td>
-                    <td><div align="left">Om Dayal Group of Institutions
-                     </div></td>
-                    <td><div align="center">2020</div></td>
-                    <td><div align="center">7.8 (CGPA)</div></td>
-                  </tr>
-                  <tr>
-                    <td>XII</td>
-                    <td>WBBHSE</td>
-                    <td><div align="left">Jhargram Kumud Kumari Institution</div></td>
-                    <td><div align="center">2016</div></td>
-                    <td><div align="center">82%</div></td>
-                  </tr>
-                  <tr>
-                    <td>X</td>
-                    <td>Board of Intermediate</td>
-                    <td><div align="left">Jhargram Kumud Kumari Institution</div></td>
-                    <td><div align="center">2014</div></td>
-                    <td><div align="center">82%</div></td>
-                  </tr>
-                
-                </table></td>
-              </tr>
-        </table>
-
-        <a href="experience.html" style="text-decoration: none;"><h3 id="WorkExp">Work Experience</h3></a>
-
-<div class="experience-entry">
-    <h4 style="margin-bottom: 5px;">Senior Data Engineer | HCL Tech (Client: Henkel)</h4>
-    <p style="margin-top: 0; color: #666;"><i>Jan 2020 – Present</i></p>
-    <ul class="ul">
-        <li><strong>Accomplished</strong> a 40% reduction in data processing latency <strong>as measured by</strong> Azure Monitor, by <strong>architecting</strong> a real-time ingestion pipeline using Azure Event Hubs and Spark Structured Streaming.</li>
-        <li><strong>Optimized</strong> annual cloud compute spend by $120k <strong>by implementing</strong> custom Databricks autoscaling clusters and refactoring shuffle-heavy PySpark jobs to eliminate data skew.</li>
-        <li><strong>Led</strong> the migration of 500+ legacy ETL jobs to a <strong>Medallion Architecture</strong> (Delta Lake), improving data availability for downstream Data Science teams by 65%.</li>
-        <li><strong>Engineered</strong> an automated Data Quality framework using <strong>Great Expectations</strong>, reducing production schema-drift incidents by 90% across Azure and GCP environments.</li>
-    </ul>
-</div>
-
-<div class="experience-entry" style="margin-top: 20px;">
-    <h4 style="margin-bottom: 5px;">Data Engineer | Capgemini (Client: Meijer)</h4>
-    <p style="margin-top: 0; color: #666;"><i>June 2018 – Dec 2019</i></p>
-    <ul class="ul">
-        <li><strong>Scaled</strong> data ingestion throughput to 2TB/day <strong>as measured by</strong> throughput metrics, by <strong>transitioning</strong> batch-based workloads to a Kappa architecture on GCP Dataflow.</li>
-        <li><strong>Automated</strong> CI/CD workflows for data pipelines <strong>by developing</strong> reusable Terraform modules and Azure DevOps YAML pipelines, reducing deployment time by 80%.</li>
-        <li><strong>Designed</strong> complex Star Schema models in BigQuery that reduced dashboard load times by 30% for 200+ global business users.</li>
-    </ul>
-</div>
-
-    </body>
+        // Prevent table overflow on mobile
+        document.querySelectorAll('table').forEach(table => {
+            const wrapper = document.createElement('div');
+            wrapper.style.overflowX = 'auto';
+            table.parentNode.insertBefore(wrapper, table);
+            wrapper.appendChild(table);
+        });
+    </script>
+</body>
 </html>

@@ -2,69 +2,213 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Experience</title>
-    <link rel="stylesheet" href="CSS/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | Subham</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --accent: #3b82f6;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --success: #10b981;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .actions {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--accent); }
+
+        hr { border: 0; height: 1px; background: var(--border); margin: 30px 0; }
+
+        /* Experience Table */
+        .table-container { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+        th { text-align: left; background-color: #f1f5f9; padding: 12px 15px; color: var(--text-muted); font-size: 0.85rem; }
+        td { padding: 15px; border-bottom: 1px solid var(--border); vertical-align: top; }
+        .company-name { font-weight: 600; color: var(--primary); display: block; }
+
+        /* Skills */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
+        .skill-card { background: #f1f5f9; padding: 15px; border-radius: 10px; text-align: center; }
+        .stars { color: #f59e0b; }
+
+        /* Contact Form */
+        .contact-section { background: #f8fafc; padding: 25px; border-radius: 12px; margin-top: 40px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.9rem; }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+        }
+        textarea { height: 100px; resize: vertical; }
+
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
+            h1 { font-size: 1.8rem; }
+            .actions { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
-    <p>
-        <h1 id="h2">My Experience in Details</h1>
-        <hr id="hr">
-    <p>
-        <ul>
-            <li>Started my career as a PEGA tester in COX communication</li>
-            <li>Learned Postman,JMeter, Selenium,UFT, basics of salesforce in CISCO</li>
-            <li>Learned JavaScript(ES6),node.js+Restify/Express,Java,Python while working on Meijer</li>
-        </ul>
-    </p>
-    </p>
-    <hr>
-    <Table class="table">
-        <thead class="table-header">
-            <tr>
-                <th>Dates  </th>
-                <th>Work  </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td >2021 -2022  </td>
-                <td>COX communication</td>
-            </tr>
 
-            <tr>
-                <td>2022 -2023  </td>
-                <td>CISCO</td>
-            </tr>
+    <div class="container">
+        <header>
+            <h1>My Experience</h1>
+            <p style="color: var(--text-muted)">Data Engineer & Databricks Specialist</p>
+            <div class="actions">
+                <a href="#" class="btn btn-primary" onclick="window.print()">Download Resume (PDF)</a>
+                <a href="#contact" class="btn" style="background: #e2e8f0; color: var(--text-main);">Get In Touch</a>
+            </div>
+            <hr>
+        </header>
 
-            <tr>
-                <td>2023</td> 
-                <td>Meijer Inc.</td>
-            </tr>
-        </tbody>
-    </Table>
-    <hr>
-    <h3>Special Skills :</h3>
-    <p>
-        <table border="1">
-            <thead>
-                <td>JAVA</td>
-                <td> ⭐⭐⭐⭐⭐</td>
+        <section>
+            <h3>Professional Timeline</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Period</th>
+                            <th>Experience & Accomplishments</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>2024 - Present</strong></td>
+                            <td>
+                                <span class="company-name">HCLTech (Client: Henkel)</span>
+                                Specialist in DLT Pipelines and Delta Lake optimization. Handling SAP/ACE data integration and acting as a Databricks Trainer.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>2023</strong></td>
+                            <td>
+                                <span class="company-name">Meijer Inc.</span>
+                                Developed backend solutions with Node.js, Express, and Python.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>2021 - 2023</strong></td>
+                            <td>
+                                <span class="company-name">CISCO & COX</span>
+                                Automation testing (Selenium, Postman) and PEGA QA.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>PYTHON  </td>
-                    <td>⭐⭐⭐</td>
-                </tr>
-                <tbody>
-                    <tr>
-                        <td>Databricks </td>
-                        <td>⭐⭐⭐⭐⭐</td>
-                    </tr>
-            </tbody>
-        </table>
-    </p>
-    <hr>
+        <section>
+            <h3>Specialized Skills</h3>
+            <div class="skills-grid" id="skills-box"></div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h3>Contact Me</h3>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea placeholder="How can I help you?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </section>
+
+        <footer>
+            <hr>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.8rem;">© 2026 Subham Alpha</p>
+        </footer>
+    </div>
+
+    <script>
+        const skills = [
+            { name: "Databricks", level: 5 },
+            { name: "JAVA", level: 5 },
+            { name: "Python", level: 4 },
+            { name: "Delta Lake", level: 5 },
+            { name: "Node.js", level: 4 }
+        ];
+
+        window.onload = () => {
+            const container = document.getElementById('skills-box');
+            container.innerHTML = skills.map(skill => `
+                <div class="skill-card">
+                    <span style="font-weight:600">${skill.name}</span>
+                    <div class="stars">${'⭐'.repeat(skill.level)}</div>
+                </div>
+            `).join('');
+        };
+
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you! Message sent successfully.');
+            e.target.reset();
+        });
+    </script>
 </body>
 </html>

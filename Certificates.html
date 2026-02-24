@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Certifications | Portfolio</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary-blue: #0062ff; /* Professional "IBM/Google" Blue */
-            --bg-body: #f4f7fa;
+            --primary-blue: #0062ff;
+            --bg-body: #f8fafc;
             --card-bg: #ffffff;
-            --text-main: #1a202c;
-            --text-sub: #718096;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         * {
@@ -27,31 +27,30 @@
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-body);
             color: var(--text-main);
-            line-height: 1.6;
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
 
-        /* Header Section */
+        /* --- Header Section with Cursive Styling --- */
         .header {
             text-align: center;
             margin-bottom: 60px;
         }
 
         .header h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            margin-bottom: 10px;
-            color: var(--text-main);
+            font-family: 'Dancing Script', cursive; /* Applied Cursive Font */
+            font-size: 3.5rem; /* Larger for cursive impact */
+            color: var(--primary-blue);
+            margin-bottom: 5px;
         }
 
         .header p {
+            font-size: 1rem;
             color: var(--text-sub);
-            max-width: 600px;
-            margin: 0 auto;
+            font-weight: 300;
+            letter-spacing: 0.5px;
         }
 
-        /* Responsive Grid System */
+        /* --- Grid & Cards --- */
         .container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -60,28 +59,24 @@
             margin: 0 auto;
         }
 
-        /* Modern Card Styling */
         .cert-card {
             background: var(--card-bg);
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
             cursor: pointer;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
 
         .cert-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary-blue);
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
         }
 
         .img-wrapper {
             position: relative;
-            width: 100%;
-            height: 220px;
-            background: #eee;
+            height: 230px;
             overflow: hidden;
         }
 
@@ -93,19 +88,19 @@
         }
 
         .cert-card:hover .img-wrapper img {
-            scale: 1.05;
+            transform: scale(1.1);
         }
 
-        /* Hover Overlay Effect */
         .overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 98, 255, 0.7);
+            background: rgba(0, 0, 0, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
             transition: var(--transition);
+            backdrop-filter: blur(3px);
         }
 
         .cert-card:hover .overlay {
@@ -114,23 +109,20 @@
 
         .overlay span {
             color: white;
-            font-weight: 600;
-            padding: 10px 20px;
-            border: 2px solid white;
-            border-radius: 50px;
+            border: 1.5px solid white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            font-size: 0.8rem;
         }
 
-        /* Content inside Card */
         .content {
-            padding: 20px;
+            padding: 24px;
         }
 
         .content h2 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            font-weight: 600;
+            font-size: 1.15rem;
+            margin-bottom: 6px;
         }
 
         .content p {
@@ -138,25 +130,24 @@
             font-size: 0.9rem;
         }
 
-        /* Lightbox (The "Impressive" Interactive Part) */
+        /* --- Interactive Lightbox --- */
         #lightbox {
             display: none;
             position: fixed;
             z-index: 1000;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(8px);
+            background: rgba(10, 15, 30, 0.98);
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 40px;
         }
 
         #lightbox img {
-            max-width: 90%;
-            max-height: 80vh;
-            border-radius: 8px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            max-width: 95%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
         }
 
         .close-btn {
@@ -164,18 +155,12 @@
             top: 30px;
             right: 40px;
             color: white;
-            font-size: 2rem;
+            font-size: 2.5rem;
             cursor: pointer;
-            transition: var(--transition);
         }
 
-        .close-btn:hover {
-            color: var(--primary-blue);
-        }
-
-        /* Responsive Mobile Adjustments */
         @media (max-width: 600px) {
-            .header h1 { font-size: 1.8rem; }
+            .header h1 { font-size: 2.8rem; }
             .container { grid-template-columns: 1fr; }
         }
     </style>
@@ -184,59 +169,51 @@
 
     <div class="header">
         <h1>Educational Milestone</h1>
-        <p>A visual track record of my technical expertise and industry certifications.</p>
+        <p>A curated showcase of my professional growth and certifications.</p>
     </div>
 
     <div class="container">
         <div class="cert-card" onclick="openImage('Images/Foundation_google.jpg')">
             <div class="img-wrapper">
                 <img src="Images/Foundation_google.jpg" alt="Google Certificate">
-                <div class="overlay"><span>Enlarge Certificate</span></div>
+                <div class="overlay"><span>View Credential</span></div>
             </div>
             <div class="content">
                 <h2>Google Foundation</h2>
-                <p>Google Career Certification • Issued 2024</p>
+                <p>Google Career Certification • 2024</p>
             </div>
         </div>
 
         <div class="cert-card" onclick="openImage('Images/Project_Initialization.jpg')">
             <div class="img-wrapper">
                 <img src="Images/Project_Initialization.jpg" alt="Project Initialization">
-                <div class="overlay"><span>Enlarge Certificate</span></div>
+                <div class="overlay"><span>View Credential</span></div>
             </div>
             <div class="content">
                 <h2>Project Initialization</h2>
-                <p>Project Management Institute • Issued 2024</p>
+                <p>Google Career Certification • 2024</p>
             </div>
         </div>
     </div>
 
     <div id="lightbox" onclick="closeImage()">
         <span class="close-btn">&times;</span>
-        <img id="lightbox-img" src="" alt="Full View">
+        <img id="lightbox-img" src="">
     </div>
 
     <script>
         function openImage(src) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            
-            lightboxImg.src = src;
-            lightbox.style.display = 'flex';
-            
-            // Prevent scrolling when image is open
+            const lb = document.getElementById('lightbox');
+            document.getElementById('lightbox-img').src = src;
+            lb.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
         function closeImage() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.style.display = 'none';
-            
-            // Restore scrolling
+            document.getElementById('lightbox').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
 
-        // Close on 'Esc' key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeImage();
         });

@@ -3,26 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificates</title>
-    <link rel="stylesheet" href="CSS/styles.css">
-</head>
-
-<body>
-    <h1 id="h2" > Certificates</h1>
-    <div class="container">
-        
-        <div class="square">
-            <div>
-             <img id="pic" src="Images\Foundation_google.jpg" alt="">
-            </div>
-        </div>
-
-        <div class="square">
-            <div>
-             <img id="pic" src="Images\Project_Initialization.jpg" alt="">
-            </div>
-        </div>
-
+    <title>Professional Certifications | Portfolio</title>
     
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #0062ff; /* Professional "IBM/Google" Blue */
+            --bg-body: #f4f7fa;
+            --card-bg: #ffffff;
+            --text-main: #1a202c;
+            --text-sub: #718096;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 50px 20px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .header p {
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Grid System */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Modern Card Styling */
+        .cert-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-blue);
+        }
+
+        .img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            background: #eee;
+            overflow: hidden;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .cert-card:hover .img-wrapper img {
+            scale: 1.05;
+        }
+
+        /* Hover Overlay Effect */
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 98, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .cert-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay span {
+            color: white;
+            font-weight: 600;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        /* Content inside Card */
+        .content {
+            padding: 20px;
+        }
+
+        .content h2 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .content p {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        /* Lightbox (The "Impressive" Interactive Part) */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-btn:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Responsive Mobile Adjustments */
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.8rem; }
+            .container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Educational Milestone</h1>
+        <p>A visual track record of my technical expertise and industry certifications.</p>
+    </div>
+
+    <div class="container">
+        <div class="cert-card" onclick="openImage('Images/Foundation_google.jpg')">
+            <div class="img-wrapper">
+                <img src="Images/Foundation_google.jpg" alt="Google Certificate">
+                <div class="overlay"><span>Enlarge Certificate</span></div>
+            </div>
+            <div class="content">
+                <h2>Google Foundation</h2>
+                <p>Google Career Certification • Issued 2024</p>
+            </div>
+        </div>
+
+        <div class="cert-card" onclick="openImage('Images/Project_Initialization.jpg')">
+            <div class="img-wrapper">
+                <img src="Images/Project_Initialization.jpg" alt="Project Initialization">
+                <div class="overlay"><span>Enlarge Certificate</span></div>
+            </div>
+            <div class="content">
+                <h2>Project Initialization</h2>
+                <p>Project Management Institute • Issued 2024</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox" onclick="closeImage()">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Full View">
+    </div>
+
+    <script>
+        function openImage(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            lightboxImg.src = src;
+            lightbox.style.display = 'flex';
+            
+            // Prevent scrolling when image is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImage() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            
+            // Restore scrolling
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on 'Esc' key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeImage();
+        });
+    </script>
+
 </body>
 </html>
